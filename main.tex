@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A template for Wiley article submissions to Networks.
+% Developed by Overleaf.
+%
+% Modified by D. Shier  (13 Feb 2019)
+%%
+% Usage notes:
+% % Use "num-refs" option for numerical citation and references style.
+% % Use the attached wiley-networks.cls and abbrv_networks.bst files.
+
+\documentclass[num-refs]{wiley-networks}
+
+% Add additional packages here if required
+\usepackage{listings}
+\usepackage{array}
+\usepackage{mathtools}
+\usepackage{bm}    
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{cleveref}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\def\Var{\textsf{Var}}
+\def\Cov{\textsf{Cov}}
+\setcounter{MaxMatrixCols}{20}
+
+% Update article type if known
+\papertype{TTK4150}
+
+\title{TTK4150 Nonlinear Systems and Control}
+
+% Use the \authfn to add symbols for additional footnotes and present addresses, if any. Usually start with 1 for notes about author contributions; then continuing with 2 etc if any author has a different present address.
+
+\author[1\authfn{1}]{Martin Brandt}
+
+% Include the name of the author that should appear in the running header
+\runningauthor{TTK4150 Summary}
+
+\begin{document}
+
+\setlist[itemize]{parsep=0pt}
+\setlist[enumerate]{parsep=0pt}
+\renewcommand{\labelitemi}{$*$}
+
+\maketitle
+
+
+\begin{abstract}
+Learning goals:
+\begin{itemize}
+\item Hello
+\end{itemize}
+\end{abstract}
+\setlength{\parindent}{0pt}
+\newpage
+
+\tableofcontents
+
+\input{summary.tex}
+
+%REFERENCES
+%Note that references are placed in lexicographic order by author name. Multiple entries within a citation should appear in numerical order also, such as [2, 17, 19, 42].
+
+%\bibliographystyle{plain}
+%\bibliography{sample}
+
+\end{document} 
