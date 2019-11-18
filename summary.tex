@@ -435,11 +435,67 @@ We consider the system $y=H u$.
     iff $\gamma_1 \gamma_2 < 1$.
 \end{theorem}
 \begin{figure}[!htb]
-        \includegraphics[width = 0.5\textwidth]{figures/fb.png}
+        \includegraphics[width = 0.4\textwidth]{figures/fb.png}
         \caption{Feedback interconnection}
 \end{figure}
 
 \section{Passivity}
+\subsection{Passivity for memoryless functions}
+Consider the memoryless function $y=h(t, u) \quad h:[0, \infty) \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{p}$.
+\begin{definition}
+    The system is \hl{passive} if $u^{\top} y \geq 0$ and lossless if $u^{\top} y=0$.\\
+    The system is \hl{input-strictly passive} if $u^{\top} y \geq u^{\top} \varphi(u)$, where $u^{\top} \varphi(u)>0 \quad \forall u \neq 0$.\\
+    The system is \hl{output-strictly passive} if $u^{\top} y \geq y^{\top} \rho(y)$, where $y^{\top} \rho(y)>0 \quad \forall y \neq 0$.
+\end{definition}
+
+\subsection{Passivity for dynamical systems}
+Now we extend this property for dynamical systems: $\Sigma: \quad \dot{x}=f(x, u), y=h(x, u)$\\
+where $f: \mathbb{R}^{n} \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{n}$ is locally Lipschitz and $h: \mathbb{R}^{n} \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{p}$ is continuous, and $f(0,0)=0 \text { and } h(0,0)=0$.
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{definition}
+    The system $\Sigma$ is \hl{passive} iff
+    $u^{\top} y \geq \dot{V} \quad \forall(x, u) \in \mathbb{R}^{n} \times \mathbb{R}^{p}$\\
+    The system is \hl{lossless} if  $u^{\top}y = \dot{V}$.\\
+    The system is \hl{input-strictly passive} if $u^{T} y \geq \dot{V}+u^{T} \varphi(u), \quad u^{T} \varphi(u)>0 \quad \forall u \neq 0$.\\
+    The system is \hl{output-strictly passive} if $u^{T} y \geq \dot{V}+y^{T} \rho(y), \quad y^{T} \rho(y)>0 \quad \forall y \neq 0$.\\
+    The system is \hl{(state-) strictly passive} if $u^{T} y \geq \dot{V}+\psi(x), \quad \psi(x)>0$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark}
+    Passivity really just generalizes the idea that the change of stored energy in the system should be less than the energy supplied to the system.
+\end{remark}
+
+\subsection{Passivity and Lyapunov stability}
+\begin{lemma}
+    If $\Sigma$ is passive with a positive definite $V(x)$, then the origin of $f\dot{x}=(x, 0)$ is stable.
+\end{lemma}
+\begin{lemma}
+    If $\Sigma$ is output-strictly passive with $\rho(y) = \delta(y), \delta < 0$, then $\Sigma$ is finite-gain $\mathscr{L}_{2}$ stable with $\gamma \leq \frac{1}{\delta}$.
+\end{lemma}
+
+\begin{definition}
+    Zero state observability: no solution of $\dot{x}=f(x, 0)$ can stay identically in $S=\left\{x \in \mathbb{R}^{n} | h(x, 0)=0\right\}$ other than the trivial solution $x(t)=0$.
+\end{definition}
+\begin{lemma}
+    The origin of $\dot{x}=f(x, 0)$ is asymptotically stable if $\Sigma$ is state-strictly passive, or output-strictly passive and zero state observable.
+    If $V(x)$ is radially unbounded $\dot{x}=f(x, 0)$ is GAS.
+\end{lemma}
+
+\begin{theorem}
+    If $H_1$ and $H_2$ is passive, then the feedback interconnection of $H_1$ and $H_2$ is passive with $V=V_1+V_2$.
+\end{theorem}
+\begin{theorem}
+    If $H_1$ and $H_2$ satisfies $e_{i}^{T} y_{i} \geq \dot{V}_{i}+\varepsilon_{i} e_{i}^{T} e_{i}+\delta_{i} y_{i}^{T} y_{i} i=1,2$ and $\varepsilon_{1}+\delta_{2}>0, \varepsilon_{2}+\delta_{1}>0$, \\
+    then $\Sigma$ is finite-gain $\mathscr{L}_{2}$ stable.
+\end{theorem}
+\begin{theorem}
+    If $H_1$ and $H_2$ are state-strictly passive,\\
+    or $H_1$ and $H_2$ are output-strictly passive and zero state observable,\\
+    or $H_1$ is state-strictly passive and $H_2$ is output-strictly passive and zero state observable or opposite,\\
+    then $\Sigma$ is 0-AS. If $V_1$ and $V_2$ are radially unbounded then $\Sigma$ is 0-GAS.
+\end{theorem}
 
 \section{Nonlinear control}
 \subsection{Passivity-based control}
