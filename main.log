@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.14)  17 NOV 2019 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.14)  17 NOV 2019 17:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1524,8 +1524,6 @@ Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/03 v0.21.3 Intelligent cross-referencing
 Package cleveref Info: `listings' support loaded on input line 2995.
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2001/04/09 non-zero parskip adjustments
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2018-03-20 v2.7m A comprehensive (SI) units package
 \l__siunitx_tmp_box=\box69
@@ -1986,16 +1984,16 @@ LaTeX Font Info:    Font shape `T1/lato-TLF/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 54.
 \wiley@abstractbox=\box78
-Package mdframed Info: mdframed works in twoside mode on input line 62.
+Package mdframed Info: mdframed works in twoside mode on input line 61.
 LaTeX Font Info:    Font shape `T1/lato-TLF/bx/n' in size <9> not available
-(Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 62.
+(Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 62.
+(Font)              scaled to size 9.0pt on input line 61.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 62.
-Package mdframed Info: mdframed works in twoside mode on input line 62.
+ mdframed uses option nobreak mdframed on input line 61.
+Package mdframed Info: mdframed works in twoside mode on input line 61.
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 64.
+(Font)              scaled to size 7.0pt on input line 63.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][] 
@@ -2006,22 +2004,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `T1/lato-TLF/m/sc' undefined
-(Font)              using `T1/lato-TLF/m/n' instead on input line 66.
+(Font)              using `T1/lato-TLF/m/n' instead on input line 65.
 
 LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 66.
+(Font)              scaled to size 10.0pt on input line 65.
 
 LaTeX Font Warning: Font shape `T1/lato-TLF/bx/sc' undefined
-(Font)              using `T1/lato-TLF/bx/n' instead on input line 66.
+(Font)              using `T1/lato-TLF/bx/n' instead on input line 65.
 
 LaTeX Font Info:    Font shape `T1/lato-TLF/bx/n' in size <10> not available
-(Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 66.
+(Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 66.
+(Font)              scaled to size 10.0pt on input line 65.
 LaTeX Font Info:    Font shape `T1/lato-TLF/bx/sc' in size <10> not available
-(Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 66.
+(Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 66.
+(Font)              scaled to size 10.0pt on input line 65.
 (/Users/martinbrandt/git/TTK4150-course-summary/main.toc
 LaTeX Font Info:    Font shape `T1/lato-TLF/bx/n' in size <8> not available
 (Font)              Font shape `T1/lato-TLF/b/n' tried instead on input line 1.
@@ -2031,7 +2029,54 @@ LaTeX Font Info:    Font shape `T1/lato-TLF/b/n' will be
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- (/Users/martinbrandt/git/TTK4150-course-summary/summary.tex) [2] (/Users/martinbrandt/git/TTK4150-course-summary/main.aux)
+ [2] (/Users/martinbrandt/git/TTK4150-course-summary/summary.tex
+<figures/sn.png, id=16, 242.9075pt x 212.795pt>
+File: figures/sn.png Graphic file (type png)
+<use figures/sn.png>
+Package pdftex.def Info: figures/sn.png  used on input line 21.
+(pdftex.def)             Requested size: 97.43925pt x 85.35826pt.
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/n' will be
+(Font)              scaled to size 7.30005pt on input line 22.
+<figures/un.png, id=18, 258.9675pt x 208.78pt>
+File: figures/un.png Graphic file (type png)
+<use figures/un.png>
+Package pdftex.def Info: figures/un.png  used on input line 25.
+(pdftex.def)             Requested size: 105.87703pt x 85.35826pt.
+<figures/sp.png, id=19, 236.885pt x 213.79875pt>
+File: figures/sp.png Graphic file (type png)
+<use figures/sp.png>
+Package pdftex.def Info: figures/sp.png  used on input line 29.
+(pdftex.def)             Requested size: 94.5752pt x 85.35826pt.
+<figures/cf.png, id=20, 237.88875pt x 234.8775pt>
+File: figures/cf.png Graphic file (type png)
+<use figures/cf.png>
+Package pdftex.def Info: figures/cf.png  used on input line 38.
+(pdftex.def)             Requested size: 86.45297pt x 85.35826pt.
+<figures/sf.png, id=21, 230.8625pt x 167.62625pt>
+File: figures/sf.png Graphic file (type png)
+<use figures/sf.png>
+Package pdftex.def Info: figures/sf.png  used on input line 42.
+(pdftex.def)             Requested size: 117.55865pt x 85.35826pt.
+<figures/uf.png, id=22, 224.84pt x 183.68625pt>
+File: figures/uf.png Graphic file (type png)
+<use figures/uf.png>
+Package pdftex.def Info: figures/uf.png  used on input line 46.
+(pdftex.def)             Requested size: 104.48433pt x 85.35826pt.
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
+(Font)              scaled to size 8.0pt on input line 62.
+LaTeX Font Info:    Font shape `T1/lato-TLF/bx/it' in size <8> not available
+(Font)              Font shape `T1/lato-TLF/b/it' tried instead on input line 65.
+LaTeX Font Info:    Font shape `T1/lato-TLF/b/it' will be
+(Font)              scaled to size 8.0pt on input line 65.
+ [3 </Users/martinbrandt/git/TTK4150-course-summary/figures/sn.png> </Users/martinbrandt/git/TTK4150-course-summary/figures/un.png> </Users/martinbrandt/git/TTK4150-course-summary/figures/sp.png> </Users/martinbrandt/git/TTK4150-course-summary/figures/cf.png> </Users/martinbrandt/git/TTK4150-course-summary/figures/sf.png> </Users/martinbrandt/git/TTK4150-course-summary/figures/uf.png>]
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
+(Font)              scaled to size 6.2pt on input line 136.
+LaTeX Font Info:    Font shape `T1/lato-TLF/m/it' will be
+(Font)              scaled to size 5.5pt on input line 136.
+ [4] [5]) (/Users/martinbrandt/git/TTK4150-course-summary/appendix.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]) [7] (/Users/martinbrandt/git/TTK4150-course-summary/main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -2044,18 +2089,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 37113 strings out of 492649
- 745312 string characters out of 6129622
- 799373 words of memory out of 5000000
- 40346 multiletter control sequences out of 15000+600000
- 954813 words of font info for 136 fonts, out of 8000000 for 9000
+ 37198 strings out of 492649
+ 746646 string characters out of 6129622
+ 807659 words of memory out of 5000000
+ 40397 multiletter control sequences out of 15000+600000
+ 1074780 words of font info for 168 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,20n,102p,10428b,1047s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lato/a_w6akef.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Bold.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Heavy.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Regular.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on /Users/martinbrandt/git/TTK4150-course-summary/main.pdf (2 pages, 61042 bytes).
+ 74i,21n,102p,10428b,1061s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lato/a_w6akef.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Bold.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-BoldItalic.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Heavy.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Italic.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/typoland/lato/Lato-Regular.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newtxsf/zsfmi-reg.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/newtxsf/zsfmia-reg.pfb>
+Output written on /Users/martinbrandt/git/TTK4150-course-summary/main.pdf (7 pages, 514929 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 22541 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 25131 words of extra memory for PDF output out of 29859 (max. 10000000)
 

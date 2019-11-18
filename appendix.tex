@@ -1,0 +1,22 @@
+\appendix
+
+\section{Linear methods}
+\begin{definition}
+    We define the p-norm as:
+    \begin{equation}
+    \|x\|_{p}=\left(\sum_{i=1}^{n}\left|x_{i}\right|^{p}\right)^{\frac{1}{p}}, \quad p \in[1, \infty]
+    \end{equation}
+\end{definition}
+\begin{theorem}
+    Schwarz' inequality:
+    \begin{equation}
+        |<x, y>| \leq\|x\| \cdot\|y\|
+    \end{equation}
+\end{theorem}
+\begin{definition}
+    $f: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$, then the Jacobian is defined as:
+    \begin{equation}
+    \frac{\partial f}{\partial x} \triangleq\left[\begin{array}{ccc}{\frac{\partial f_{1}}{\partial x_{1}}} & {\cdots} & {\frac{\partial f_{1}}{\partial x_{n}}} \\ {\vdots} & {} & {\vdots} \\ {\frac{\partial f_{m}}{\partial x_{1}}} & {\cdots} & {\frac{\partial f_{m}}{\partial x_{n}}}\end{array}\right]
+    \end{equation}
+    Which in the scalar case $m=1$ is the gradient.
+\end{definition}
