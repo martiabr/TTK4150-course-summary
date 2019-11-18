@@ -4,8 +4,9 @@ We first consider the system
 \begin{array}{l}{\dot{x}_{1}=f_{1}\left(x_{1}, x_{2}\right)} \\ {\dot{x}_{2}=f_{2}\left(x_{1}, x_{2}\right)}\end{array}
 \end{equation}
 
-\textbf{Phase-plane analysis:} Determine the system behavior by constructing a phase portrait, i.e. plotting different IVP solutions in the phase space.
+\textbf{Phase-plane analysis:} Determine the system behavior by constructing a \hl{phase portrait}, i.e. plotting different IVP solutions in the phase space.
 
+\begin{tcolorbox}[colback=white, colframe=teal]
 \textbf{Local analysis:}
 \begin{itemize}[topsep=0pt]
     \item Linearize about $x^*$.
@@ -14,6 +15,7 @@ We first consider the system
     If $\lambda$ is real, them we either get a stable node ($\lambda_2 < \lambda_1 < 0$), unstable node ($0 < \lambda_2 < \lambda_1$) or a saddle point ($\lambda_2 < 0 < \lambda_1$).
     In the complex case $\lambda_{1,2} = \alpha \pm \beta i$, then we either get a center focus ($\alpha = 0$), a stable focus ($\alpha < 0$) or an unstable focus ($\alpha > 0$).
 \end{itemize}
+\end{tcolorbox}
 
 \begin{figure}[!htb]
     \centering
@@ -58,6 +60,8 @@ We first consider the system
 \begin{definition}
     Limit cycle: non-trivial isolated periodic orbit.
 \end{definition}
+
+\begin{tcolorbox}[colback=white, colframe=teal]
 \begin{lemma}
     Poincaré-Bendixson criterion:\\
     Let $M$ be a closed bounded subset of the plane s.t.:
@@ -70,6 +74,7 @@ We first consider the system
     \end{itemize}
     Then $M$ contains a periodic orbit of the system.
 \end{lemma}
+\end{tcolorbox}
 
 \begin{lemma}
     Bendixson negative criterion:\\
@@ -129,6 +134,7 @@ Regulation vs. trajectory tracking.
 \end{remark}
 
 \subsection{Lyapunov's indirect method}
+\begin{tcolorbox}[colback=white, colframe=teal]
 \begin{theorem}
     Lyapunov's indirect method:\\
     Let $x = 0$ be an equilibrium point for
@@ -146,9 +152,11 @@ Regulation vs. trajectory tracking.
         \end{itemize}
     \end{enumerate}
 \end{theorem}
+\end{tcolorbox}
 While Lyapunov's indirect method is simple to use, the results are only local and often inconclusive. Let's see if we can do better ey?
 
 \subsection{Lyapunov's direct method}
+\begin{tcolorbox}[colback=white, colframe=teal]
 \begin{definition}
     Lyapunov function:\\
     $V$ is a Lyapunov function for $x=0$ iff
@@ -159,7 +167,9 @@ While Lyapunov's indirect method is simple to use, the results are only local an
     \end{itemize}
     If $\dot{V}(x) < 0 \quad \text { in } \quad \mathbb{D} \backslash\{0\}$ then $V$ is a strict Lyapunov function for $x=0$.
 \end{definition}
+\end{tcolorbox}
 
+\begin{tcolorbox}[colback=white, colframe=teal]
 \begin{theorem}
     Lyapunov's stability theorem:
     \begin{itemize}[topsep=0pt]
@@ -167,6 +177,7 @@ While Lyapunov's indirect method is simple to use, the results are only local an
         \item If $\exists$ strict $V(x)$ for $x=0$, then $x=0$ is asymptotically stable.
     \end{itemize}
 \end{theorem}
+\end{tcolorbox}
 
 \begin{theorem}
     Chetaev's instability theorem:\\
@@ -174,7 +185,7 @@ While Lyapunov's indirect method is simple to use, the results are only local an
 \end{theorem}
 
 \begin{definition}
-    Radially unboundedness: $\| x\| \rightarrow \infty \implies V(x) \rightarrow \infty$
+    \hl{Radially unboundedness:} $\quad \| x\| \rightarrow \infty \implies V(x) \rightarrow \infty$
 \end{definition}
 
 \begin{theorem}
@@ -219,6 +230,7 @@ While Lyapunov's indirect method is simple to use, the results are only local an
     Level set: $\Omega_{c}=\left\{x \in \mathbb{R}^{n}: V(x) \leq c\right\}$
 \end{definition}
 
+\begin{tcolorbox}[colback=white, colframe=teal]
 \begin{theorem}
     La Salle's theorem:\\
     If $\exists V : \mathbb{D} \rightarrow \mathbb{R}$ s.t.
@@ -230,9 +242,10 @@ While Lyapunov's indirect method is simple to use, the results are only local an
     Let $E=\left\{x \in \Omega_{c} | \dot{V}(x)=0\right\}$. Let $M$ be the largest invariant set contained in $E$.
     Then $x(0) \in \Omega_{c} \Rightarrow x(t) \stackrel{t \rightarrow \infty}{\longrightarrow} M$.
 \end{theorem}
+\end{tcolorbox}
 
 \begin{definition}
-    Region of attraction:\\
+    \hl{Region of attraction:}\\
     Let $x=0$ be an asymptotically stable equilibrium point of the system $\dot{x} = f(x)$, where $f: \mathbb{D} \rightarrow \mathbb{R}^{n}$ is locally Lipschitz and $\mathbb{D} \subset \mathbb{R}^{n}$ contains the origin.
     Let $\phi\left(t, x_{0}\right)$ be the solution. Then the region of attraction is
     \begin{equation}
@@ -248,10 +261,183 @@ While Lyapunov's indirect method is simple to use, the results are only local an
 Then this subset is a subset of $R_A$.
 
 \subsection{Stability analysis of time-variant systems}
+We now consider the system $\dot{x} = f(t, x)$.
+
+\begin{definition}
+    Stability: $\forall \varepsilon>0, \quad \exists \delta\left(\varepsilon, t_{0}\right)>0 \quad \text{s.t.} \quad \left\|x\left(t_{0}\right)\right\|<\delta \Rightarrow\|x(t)\|<\varepsilon \quad \forall t \geq t_{0} \geq 0$
+\end{definition}
+\begin{definition}
+    Uniform stability: stable with $\delta\left(\varepsilon, t_{0}\right) = \delta\left(\varepsilon\right)$.
+\end{definition}
+\begin{definition}
+    Asymptotic stability: stable and $\exists c\left(t_{0}\right)>0 \quad \text {s.t.} \quad \left\|x\left(t_{0}\right)\right\|<c \Rightarrow x(t) \stackrel{t \rightarrow \infty}{\longrightarrow} 0$.
+\end{definition}
+\begin{definition}
+    Uniform asymptotic stability: asymptotically stable with $\delta\left(\varepsilon, t_{0}\right) = \delta\left(\varepsilon\right)$.
+\end{definition}
+\begin{definition}
+    Global uniform asymptotic stability: uniform stability with $\delta(\varepsilon) \stackrel{\varepsilon \rightarrow \infty}{\longrightarrow} \infty$ and $\forall c>0 \quad\left\|x\left(t_{0}\right)\right\|<c \Rightarrow x(t) \stackrel{t \rightarrow \infty}{\longrightarrow} 0$ uniformly in $t_0$.
+\end{definition}
+\begin{definition}
+    Exponential stability: $\exists c, k, \lambda>0 \quad \text { s.t. } \quad\|x(t)\| \leq k\left\|x\left(t_{0}\right)\right\| e^{-\lambda\left(t-t_{0}\right)} t \geq t_{0} \geq 0 \left\|x\left(t_{0}\right)\right\| \leq c$.
+    GES if $\forall c$.
+\end{definition}
+
+\begin{definition}
+    A continuous function $\alpha:[0, a) \rightarrow[0, \infty)$ is a \hl{class $\mathscr{K}$ function} iff:\\
+    $\alpha(0)=0$ and $\alpha(r)$ is strictly increasing, i.e. $\frac{\partial \alpha}{\partial r}>0 \quad \forall r>0$.
+\end{definition}
+\begin{definition}
+    If in addition $a \rightarrow \infty$ and $\alpha(r) \rightarrow \infty \text { as } r \rightarrow \infty$, then $\alpha$ is a \hl{class $\mathscr{K}_\infty$ function.}
+\end{definition}
+\begin{definition}
+    A continuous function $\beta:[0, a) \times[0, \infty) \rightarrow[0, \infty)$
+    is a \hl{class $\mathscr{KL}$ function} if for each fixed $s$
+    \begin{itemize}[topsep=0pt]
+        \item $\beta(r,s)$ is a class $\mathscr{K}$ function w.r.t. $r$
+    \end{itemize}
+    and for each fixed $r$
+    \begin{itemize}[topsep=0pt]
+        \item $\beta(r,s)$ is decreasing w.r.t. $s$,
+        \item $\beta(r,s) \rightarrow 0$ as $s \rightarrow \infty$.
+    \end{itemize}
+\end{definition}
+
+We can now define stability in terms of class $\mathscr{K}$ functions:
+\begin{definition}
+    Uniform stability: $\exists$ class $\mathscr{K}$ function $\alpha$ and $\exists c > 0$ s.t.
+    $\|x(t)\| \leq \alpha\left(\left\|x\left(t_{0}\right)\right\|\right) \forall t \geq t_{0} \geq 0, \quad \forall\left\|x\left(t_{0}\right)\right\|<c$.
+\end{definition}
+\begin{definition}
+    Uniform asymptotic stability: $\exists$ class $\mathscr{KL}$ function $\beta$ and $\exists c > 0$ s.t.
+    $\|x(t)\| \leq \beta\left(\left\|x\left(t_{0}\right)\right\|, t-t_{0}\right) \forall t \geq t_{0} \geq 0, \quad \forall\left\|x\left(t_{0}\right)\right\|<c$.
+    GUAS if $\forall c$.
+\end{definition}
+
+\begin{definition}
+    $V(t,x)$ is \hl{positive definite} iff
+    \begin{itemize}[topsep=0pt]
+        \item $V(t,0)=0$
+        \item $V(t,x) \geq W_1(x)$
+    \end{itemize}
+    $\forall t \geq 0, W_1(x)>0$
+\end{definition}
+\begin{definition}
+    $V(t,x)$ is \hl{decrescent} iff
+    \begin{itemize}[topsep=0pt]
+        \item $V(t,0)=0$
+        \item $V(t,x) \leq W_2(x)$
+    \end{itemize}
+    $\forall t \geq 0, W_2(x)>0$
+\end{definition}
+
+We can summarize the stability theorems for time-varying systems like this:
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        & Stable & Uniformly stable & UAS & GUAS \\
+        \hline
+        $V$ & Pos. def. & Pos. def., decrescent & Pos. def., decrescent. & Pos. def., decrescent, radially unbounded \\
+        \hline
+        $\dot{V}$ & Neg. semidef. & Neg. semidef. & Neg. def. & Neg. def. \\
+        \hline
+        & $\forall x \in \mathbb{D}$ & $\forall x \in \mathbb{D}$ & $\forall x \in \mathbb{D}$ & $\forall x \in \mathbb{R}^n$ \\
+        \hline
+    \end{tabular} 
+    \label{tab:stability}
+\end{center}
+
+\textbf{Estimate of $R_A$:} $B_{r}=\left\{x \in \mathbb{R}^{n}:\|x\| \leq r\right\} \subset \mathbb{D}, c<\min _{\|x\|=r} W_{1}(x) \implies \left\{x \in B_{r}: W_{2}(x) \leq c\right\}$ is a region of attraction, when the origin is UAS.
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{lemma}
+    Barbalat's lemma: \\
+    Let $\dot{f} : \mathbb{R} \rightarrow \mathbb{R}$ be uniformly continuous on $[0, \infty)$. If $\lim _{t \rightarrow \infty} f(t)$ exists and is finite, then $\dot{f} \rightarrow 0 \text { as } t \rightarrow \infty$.\\
+    Rephrased: if $V$ is lower bounded, $\dot{V} \leq 0$ and $\ddot{V}$ is uniformly bounded, then $\dot{V} \rightarrow 0$ as $t \rightarrow \infty$.
+\end{lemma}
+\end{tcolorbox}
 
 \section{Input-to-state stability}
 \subsection{Input-to-state stability}
+Now we consider the system $\Sigma: \dot{x}=f(t, x, u)$, where we consider $u(t)$ to be a disturbance/modelling error.
+
+\begin{definition}
+    \hl{Input-to-state stability (ISS):} $\exists \beta \in \mathscr{K} \mathscr{L}, \gamma \in \mathscr{K} \text { s.t. } \left\|x\left(t, x_{0}, u\right)\right\| \leq \max \left\{\beta\left(\left\|x\left(t_{0}\right)\right\|, t-t_{0}\right), \gamma\left(\|u\|_{\infty}\right)\right\}$
+\end{definition}
+\begin{remark}
+    This is really just an extension of GUAS that says that $x$ is bounded the input as well. So naturally if $\Sigma$ is ISS then it is also 0-GUAS.
+\end{remark}
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{definition}
+    $V:[0, \infty) \times \mathbb{R}^{n} \rightarrow \mathbb{R}$ is an \hl{ISS-LF} for $\Sigma \text { iff }$
+    \begin{itemize}[topsep=0pt]
+        \item $V$ is $C^1$.
+    \end{itemize}
+    $\exists \alpha_{1}, \alpha_{2} \in \mathscr{K}_{\infty} \text { and } \rho \in \mathscr{K} \text { s.t. }$
+    \begin{itemize}[topsep=0pt]
+        \item $\alpha_{1}(\|x\|) \leq V(t, x) \leq \alpha_{2}(\|x\|)$
+        \item $\dot{V}(t, x)=\frac{\partial V}{\partial x} f+\frac{\partial V}{\partial t} \leq-W_{3}(x) \quad\|x\| \geq \rho(\|u\|)>0$
+    \end{itemize}
+    where $W_3 > 0$.\\
+    It can be shown that $\gamma=\alpha_{1}^{-1} \circ \alpha_{2} \circ \rho$.\\
+    $\exists \mathrm{ISS}-\mathrm{LF} \text { for } \Sigma \Rightarrow \Sigma \text { is } \mathrm{ISS}$
+\end{definition}
+\end{tcolorbox}
+
+\begin{lemma}
+    if $f \text { is } C^{1} \text { and globally Lipschitz in }(x, u)$, then
+    $\Sigma \text { is } 0-\mathrm{GES} \Rightarrow \Sigma \text { is } \mathrm{ISS}$
+\end{lemma}
+
+\begin{theorem}
+    Consider the cascaded system $\Sigma_{2} \longrightarrow \Sigma_{1}$, where $\Sigma_{1}: \dot{x}_{1}=f_{1}\left(t, x_{1}, x_{2}\right)$ and $\Sigma_{2}: \dot{x}_{2}=f_{2}\left(t, x_{2}\right)$.\\
+    If $\Sigma_2$ is GUAS and $\Sigma_1$ is ISS, then the cascaded system is GUAS. 
+\end{theorem}
+
 \subsection{Input-output stability}
+We consider the system $y=H u$.
+\begin{definition}
+    $\mathscr{L}_{p}^{m}$ space:
+    $\quad u \in \mathscr{L}_{p}^{m} \quad 1 \leq p<\infty \quad \Leftrightarrow \quad\|u\|_{\mathscr{L}_{p}}=\left(\int_{0}^{\infty}\|u(t)\|_{\bar{p}}^{p} d t\right)^{\frac{1}{p}}<\infty$
+\end{definition}
+\begin{remark}
+    This makes $\mathscr{L}_{2}$ the space of all continuous, square-integrable functions, for instance.
+\end{remark}
+\begin{definition}
+    $\mathscr{L}_{pe}^{m}$ space:
+    $u \in \mathscr{L}_{p e}^{m} \Leftrightarrow u_{\tau} \in \mathscr{L}_{p}^{m} \quad \forall \tau \in[0, \infty)$, where $u_\tau$ is the truncated version if $u$.
+\end{definition}
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{definition}
+    $H: \mathscr{L}_{p e}^{m} \rightarrow \mathscr{L}_{p e}^{q} \text { is }$ \hl{$\mathscr{L}_{p}$ stable} iff
+    \begin{itemize}[topsep=0pt]
+        \item $\exists \alpha \text { class } \mathscr{K} \quad \alpha:[0, \infty) \rightarrow[0, \infty)$
+        \item $\exists \text { constant } \beta \geq 0$
+    \end{itemize}
+    s.t. $\left\|(H u)_{\tau}\right\|_{\mathscr{L}_{p}} \leq \alpha\left(\left\|u_{\tau}\right\|_{\mathscr{L}_{p}}\right)+\beta \quad \forall u \in \mathscr{L}_{p e}^{m} \text { and } \tau \in[0, \infty)$
+\end{definition}
+\end{tcolorbox}
+
+\begin{definition}
+    \hl{Finite-gain $\mathscr{L}_{p}$ stable:}
+    $\exists\gamma, \beta \geq 0$ s.t. $\left\|(H u)_{\tau}\right\|_{\mathscr{L}_{p}} \leq \gamma\left\|u_{\tau}\right\|_{\mathscr{L}_{p}}+\beta$
+\end{definition}
+\begin{definition}
+    Causal system: $(H u)_{\tau}=\left(H u_{\tau}\right)_{\tau}$\\
+    The two definitons above hold for non-truncated signals if the systems are causal.
+\end{definition}
+
+\begin{theorem}
+    Small-gain theorem:\\
+    The feedback interconnection of $H_1$ and $H_2$ are finite-gain $\mathscr{L}_{p}$ stable
+    iff $\gamma_1 \gamma_2 < 1$.
+\end{theorem}
+\begin{figure}[!htb]
+        \includegraphics[width = 0.5\textwidth]{figures/fb.png}
+        \caption{Feedback interconnection}
+\end{figure}
 
 \section{Passivity}
 

@@ -26,12 +26,17 @@
 \usepackage{siunitx}
 \usepackage{subcaption}
 \usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{soul}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \def\Var{\textsf{Var}}
 \def\Cov{\textsf{Cov}}
 \setcounter{MaxMatrixCols}{20}
+\colorlet{soulteal}{teal!30}
 
 % Update article type if known
 \papertype{TTK4150}
@@ -50,6 +55,7 @@
 \setlist[itemize]{parsep=0pt}
 \setlist[enumerate]{parsep=0pt}
 \renewcommand{\labelitemi}{$*$}
+\sethlcolor{soulteal}
 
 \maketitle
 
