@@ -87,8 +87,10 @@ We first consider the system
 \end{corollary}
 
 \section{Fundamental properties}
+\begin{tcolorbox}[colback=white, colframe=teal]
 \textbf{Lipschitz:} $\|f(t, x)-f(t, y)\| \leq L\|x-y\|$ \\
 Either locally Lipschitz on $\mathbb{D}$ (L varies), Lipschitz in $\mathbb{D}$ or globally Lipschitz.
+\end{tcolorbox}
 
 \begin{theorem}
     Local existence and uniqueness:\\
@@ -184,9 +186,11 @@ While Lyapunov's indirect method is simple to use, the results are only local an
     If $\dot{V}(x) > 0$ in a set $U = \{x \in B_r | V(x) > 0\}$, then $x=0$ is unstable.
 \end{theorem}
 
+\begin{tcolorbox}[colback=white, colframe=teal]
 \begin{definition}
     \hl{Radially unboundedness:} $\quad \| x\| \rightarrow \infty \implies V(x) \rightarrow \infty$
 \end{definition}
+\end{tcolorbox}
 
 \begin{theorem}
     If $\exists$ strict  $V : \mathbb{R}^n \rightarrow \mathbb{R}$ for $x=0$ and
@@ -498,7 +502,54 @@ where $f: \mathbb{R}^{n} \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{n}$ is lo
 \end{theorem}
 
 \section{Nonlinear control}
+\subsection{Lyapunov control design}
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{itemize}[topsep=0pt]
+    \item Propose a LFC $V(t,x)$, typically as desired energy in system.
+    \item Choose $u=g(t,x)$ s.t. $\dot{V}<0$ or $\dot{V}\leq0$ with La Salle / Barbalat.
+\end{itemize}
+\end{tcolorbox}
+
 \subsection{Passivity-based control}
+
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{theorem}
+    For the LTI system $y(s)=h(s)u(s)$ with $\operatorname{Re}\left(p_{i}\right)<0, \forall i$ we have:
+    \begin{itemize}[topsep=0pt]
+        \item Passivity $\Leftrightarrow \operatorname{Re}[h(j \omega)] \geq 0 \forall \omega$ (note that if $h(s)$ has an integrator as well and $\operatorname{Re}\left(z_{i}\right)<0$ this still holds)
+        \item Input-strict passivity $\Leftrightarrow \operatorname{Re}[h(j \omega)] \geq \delta>0 \forall \omega$, with $\varphi(u)=\delta u$
+        \item Output-strict passivity $\Leftrightarrow \exists \varepsilon>0 \text { s.t. } \operatorname{Re}[h(j \omega)] \geq \varepsilon|h(j \omega)|^{2} \forall \omega$, with $\rho(y)=\varepsilon y$
+    \end{itemize}
+\end{theorem}
+\end{tcolorbox}
+\begin{remark}
+    This says that with non-negative real part the system is passive, with a strictly positive real part it is input-strictly passive and if it  is lower bounded by the square of the magnitude it is output-strictly passive.
+\end{remark}
+
+\begin{remark}
+    Note that the previously discussed passivity theorems can be applied for passivity-based control. \\
+    Notably that means that if the controller and plant are passive, then the closed-loop system is passive.\\
+    Also if the controller is input- and output strictly passive and the plant is passive, then the system is finite gain $\mathscr{L}_2$ stable.
+    The final passivity theorem can naturally also be applied.
+\end{remark}
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+\begin{theorem}
+    Consider $H_{1}$ with $\dot{x}=f(x, u)$ locally Lipschitz and $y = h(x)$ continuous, both zero in the origin.\\
+     Also consider $H_2 :\phi(y)$ locally Lipschitz, memoryless and zero in origin.\\
+     If $H_1$ is passive with $V>0$, radially unbounded and zero state observable, and $H_2$ satisifes $y^{\top} \phi(y) > 0, y \neq 0$ (passive, but not lossness) then the origin is GAS.
+\end{theorem}
+\end{tcolorbox}
+
+\textbf{Choice of y:} for $\dot{x}=f(x)+G(x) u$, if $\exists$ LF $V(x)$ radially unbounded, let $y=\left[\frac{\partial V}{\partial x} G(x)\right]^{T}$ for the system to be passive.
+\hl{\textbf{Feedback} \textbf{passivation:}} choose $u=\alpha(x)+\beta(x) v, y=h(x)$ s.t. $\dot{x}=f(x)+G(x) u$ has desired passivity properties $v \mapsto y$.
+
 \subsection{Feedback linearization}
+
+
 \subsection{Adaptive control}
+
+
 \subsection{Backstepping}
+
