@@ -10,7 +10,7 @@ We first consider the system
 \textbf{Local analysis:}
 \begin{itemize}[topsep=0pt]
     \item Linearize about $x^*$.
-    \item Find egeinvalues $\lambda(A)$.
+    \item Find eigenvalues $\lambda(A)$.
     \item Classify equilibrium points for $f(x^*) = 0$.
     If $\lambda$ is real, them we either get a stable node ($\lambda_2 < \lambda_1 < 0$), unstable node ($0 < \lambda_2 < \lambda_1$) or a saddle point ($\lambda_2 < 0 < \lambda_1$).
     In the complex case $\lambda_{1,2} = \alpha \pm \beta i$, then we either get a center focus ($\alpha = 0$), a stable focus ($\alpha < 0$) or an unstable focus ($\alpha > 0$).
@@ -64,7 +64,7 @@ We first consider the system
 \begin{tcolorbox}[colback=white, colframe=teal]
 \begin{lemma}
     Poincaré-Bendixson criterion:\\
-    Let $M$ be a closed bounded subset of the plane s.t.:
+    Let $M$ be a closed bounded subset of the plane s.t.
     \begin{itemize}[topsep=0pt]
         \item $M$ contains no $x^*$, or it
         contains only one $x^*$ with the property that
@@ -439,10 +439,10 @@ We consider the system $y=H u$.
     iff $\gamma_1 \gamma_2 < 1$.
 \end{theorem}
 \begin{figure}[!htb]
-        \includegraphics[width = 0.4\textwidth]{figures/fb.png}
+        \includegraphics[width = 0.6\textwidth]{figures/fb.png}
         \caption{Feedback interconnection}
 \end{figure}
-
+\newpage
 \section{Passivity}
 \subsection{Passivity for memoryless functions}
 Consider the memoryless function $y=h(t, u) \quad h:[0, \infty) \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{p}$.
@@ -473,7 +473,7 @@ where $f: \mathbb{R}^{n} \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{n}$ is lo
 
 \subsection{Passivity and Lyapunov stability}
 \begin{lemma}
-    If $\Sigma$ is passive with a positive definite $V(x)$, then the origin of $f\dot{x}=(x, 0)$ is stable.
+    If $\Sigma$ is passive with a positive definite $V(x)$, then the origin of $\dot{x}=f(x, 0)$ is stable.
 \end{lemma}
 \begin{lemma}
     If $\Sigma$ is output-strictly passive with $\rho(y) = \delta(y), \delta < 0$, then $\Sigma$ is finite-gain $\mathscr{L}_{2}$ stable with $\gamma \leq \frac{1}{\delta}$.
@@ -578,9 +578,9 @@ We now consider the system $\begin{array}{l}{\dot{x}=f(x)+g(x) u} \\ {y=h(x)}\en
 \end{definition}
 
 \begin{tcolorbox}[colback=white, colframe=teal]
-    \textbf{Input-output linearization:}\\
+    \textbf{Input-output linearization:}
     \begin{enumerate}
-        \item \textbf{Find the relative degree $\rho$}\\
+        \item \textbf{Find the relative degree $\rho$}
         \item \textbf{Write the system in normal form}\\
         Let $\psi_1 = y, \psi_2 = \dot{y}, \dots$
         The \hl{external dynamics} are then $\dot{\psi_1} = \psi_2, \dots, \dot{\psi}_{\rho}=L_{f}^{\rho} h+L_{g} L_{f}^{\rho-1} h \cdot u$.\\
@@ -589,11 +589,11 @@ We now consider the system $\begin{array}{l}{\dot{x}=f(x)+g(x) u} \\ {y=h(x)}\en
         Choose $\varphi$ s.t. $T$ is a diffeomorphism, $L_{g} \varphi_{i}=0$ and $\varphi_i(0)=0$.\\
         If the Jacobian $\left.\frac{\partial T}{\partial x}\right|_{x_{0}}$ is nonsingular, then $T$ is a diffeomorphism. Then the \hl{internal dynamics} are $\dot{\psi} = \dots$.
         We can then finally write the system in \hl{normal form:} $\dot{z} = \dots$.
-        \item \textbf{Choose u to cancel nonlinearities}\\
+        \item \textbf{Choose u to cancel nonlinearities}
         \begin{equation}
             u=\frac{1}{L_{g} L_{f}^{\rho-1} h}\left(-L_{f}^{\rho} h+v\right) \quad \implies \quad \psi_{\rho} = v
         \end{equation}
-        \item \textbf{Analyze the zero-dynamics}\\
+        \item \textbf{Analyze the zero-dynamics}
         \item \textbf{Choose $v$ to solve the control problem}\\
         This is a special case of the system $\dot{\varphi}=f_{0}(\varphi, \psi), \quad \dot{\psi}=A \psi+B v$.
         \begin{lemma}
@@ -611,7 +611,7 @@ We now consider the system $\begin{array}{l}{\dot{x}=f(x)+g(x) u} \\ {y=h(x)}\en
 Consider the SISO system $\dot{x} = a_p x + c_p f(x) + b_p u$.
 \begin{tcolorbox}[colback=white, colframe=teal]
     \textbf{SISO MRAC:}
-\begin{enumerate}
+    \begin{enumerate}
     \item \textbf{Specify desired closed-loop behaviour} by reference model:
         $\dot{x}_m = a_m x_m + b_m r(t)$
     \item \textbf{Choose control law} s.t. plant output tracks reference model output when parameters are exactly known, by deriving error dynamics. Then replace parameters by estimates. 
@@ -626,6 +626,11 @@ Consider the SISO system $\dot{x} = a_p x + c_p f(x) + b_p u$.
     the error will go to zero by Barbalat's lemma.
 \end{enumerate}
 \end{tcolorbox}
+
+\begin{figure}[!htb]
+    \includegraphics[width = 0.6\textwidth]{figures/mrac.png}
+    \caption{Model reference adaptive control loop}
+\end{figure}
 
 \subsubsection{Adaptive tracking control for a class of MIMO systems}
 Consider the system $M(q) \ddot{q}+C(q, \dot{q}) \dot{q}+D(q) \dot{q}+g(q)=u$, with $M>0, \dot{M}-2 C \text { is skew symmetric, } z^{T} D z>0 \quad \forall z \neq 0$.\\
@@ -654,4 +659,31 @@ While the system is nonlinear it is linear in the unknown parameters $a$ by the 
 \end{tcolorbox}
 
 \subsection{Backstepping}
+We consider the system
+\begin{equation}
+\left[\begin{array}{c}{\dot{x}_{1}} \\ {\dot{x}_{2}} \\ {\vdots} \\ {\dot{x}_{n}}\end{array}\right]=f\left(\left[\begin{array}{c}{x_{1}} \\ {x_{2}} \\ {\vdots} \\ {x_{n}}\end{array}\right]+g\left(\left[\begin{array}{c}{x_{1}} \\ {x_{2}} \\ {\vdots} \\ {x_{n}}\end{array}\right]\right) \cdot x_{n+1}\right., \quad
+    \dot{x}_{n+1}=u
+\end{equation}
+Which we can identify as the cascaded system ${\Sigma_{1}:} {\dot{\eta}=f(\eta)+g(\eta) \xi}, \quad {\Sigma_{2}:} {\dot{\xi}=u}$. \\ We can regard $\xi$ as the virtual control input of $\Sigma_1$.
 
+\begin{tcolorbox}[colback=white, colframe=teal]
+    \textbf{Integrator backstepping:}
+    \begin{enumerate}
+        \item \textbf{Find stabilizing function for $\Sigma_1$}\\
+        $\xi=\varphi(\eta), \quad \varphi(0)=0$ s.t. $\xi = 0$ is asymptotically stable by some $V_1(\eta)$.
+        \item \textbf{Design actual control input $u$}
+        \begin{enumerate}
+            \item Introduce error variable $z=\xi-\varphi(\eta)$.
+            \item Derive dynamics in $(\eta, z)$ coordinates.
+            \item Choose LFC $V_2(\eta, z) = V_1(\eta) + \frac{1}{2}x^2$.
+            \item Find $u$ that asymptotically stabilizes $(\eta, z) = (0,0)$. Generally we get:
+            \begin{equation}
+                u=-\frac{\partial V}{\partial \eta} g(\eta)+\dot{\varphi}-k z
+            \end{equation}
+            If $V_2$ is radially unbounded in $\eta$ and $\mathbb{D} = \mathbb{R}^n$ the results are global.
+        \end{enumerate}
+    \end{enumerate}
+\end{tcolorbox}
+\begin{remark}
+    Note that this is a recursive process, and you may therefore do several steps of finding virtual control inputs before finally finding $u$. Also note that the method works fine even if $\Sigma_2$ is more exotic.
+\end{remark}
