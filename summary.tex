@@ -512,7 +512,6 @@ where $f: \mathbb{R}^{n} \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{n}$ is lo
 
 \subsection{Passivity-based control}
 
-
 \begin{tcolorbox}[colback=white, colframe=teal]
 \begin{theorem}
     For the LTI system $y(s)=h(s)u(s)$ with $\operatorname{Re}\left(p_{i}\right)<0, \forall i$ we have:
@@ -546,7 +545,66 @@ where $f: \mathbb{R}^{n} \times \mathbb{R}^{p} \rightarrow \mathbb{R}^{n}$ is lo
 \hl{\textbf{Feedback} \textbf{passivation:}} choose $u=\alpha(x)+\beta(x) v, y=h(x)$ s.t. $\dot{x}=f(x)+G(x) u$ has desired passivity properties $v \mapsto y$.
 
 \subsection{Feedback linearization}
+\subsubsection{Input-state linearization}
+Consider $\dot{x}=f(x)+G(x) u$. Find a state transformation $z=T(x)$ and input transformation $u = \alpha(x) + \beta(x)v$ s.t. the new system in $z$ coordinates is linear and controllable.
+This is rearily possible to do, so we consider input-output linearization instead:
 
+\subsubsection{Input-output linearization}
+We now consider the system $\begin{array}{l}{\dot{x}=f(x)+g(x) u} \\ {y=h(x)}\end{array}$.
+\begin{definition}
+    \hl{Lie derivative:} $L_{f} h=\frac{\partial h}{\partial x} f, \quad L_{f}^{2} h=\frac{\partial L_{f} h}{\partial x} f, \quad \dots \quad L_{f}^{i} h=L_{f}\left(L_{f}^{i-1} h\right)$
+\end{definition}
+\begin{definition}
+    The system has \hl{relative degree $\rho$} $ \text { in a region } \mathbb{D}_{0} \subset \mathbb{D} \subset \mathbb{R}^{n} \text { if }$
+    \begin{equation}
+    \left.\begin{array}{l}{L_{g} L_{f}^{i-1} h=0, \quad 1 \leq i \leq \rho-1} \\ {L_{g} L_{f}^{\rho-1} h \neq 0}\end{array}\right\} \forall x \in \mathbb{D}_{0}
+    \end{equation}
+\end{definition}
+\begin{remark}
+    (the number of differentiations of $y$ before $u$ appears)
+\end{remark}
+\begin{remark}
+    For linear systems we have $\rho = n-m$.
+\end{remark}
+\begin{remark}
+    If the relative degree is well defined in the region of interest $\mathbb{D}$, then the system can be input-output linearized.
+\end{remark}
+
+\begin{definition}
+   \hl{Zero dynamics:} internal dynamics when output is kept at zero by the input i.e. $\psi = 0, \dot{\phi} = f_o(\phi, 0)$.
+\end{definition}
+\begin{definition}
+    \hl{Minimum-phase system:} the zero-dynamics are asymptotically stable.
+\end{definition}
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+    \textbf{Input-output linearization:}\\
+    \begin{enumerate}
+        \item \textbf{Find the relative degree $\rho$}\\
+        \item \textbf{Write the system in normal form}\\
+        Let $\psi_1 = y, \psi_2 = \dot{y}, \dots$
+        The \hl{external dynamics} are then $\dot{\psi_1} = \psi_2, \dots, \dot{\psi}_{\rho}=L_{f}^{\rho} h+L_{g} L_{f}^{\rho-1} h \cdot u$.\\
+        Let $\phi_1, \dots, \phi_{n-\rho}$ and $z = T(x) =
+        [\begin{array}{cc}\varphi^{\top} & \psi^{\top} \end{array}]^{\top}$.\\
+        Choose $\varphi$ s.t. $T$ is a diffeomorphism, $L_{g} \varphi_{i}=0$ and $\varphi_i(0)=0$.\\
+        If the Jacobian $\left.\frac{\partial T}{\partial x}\right|_{x_{0}}$ is nonsingular, then $T$ is a diffeomorphism. Then the \hl{internal dynamics} are $\dot{\psi} = \dots$.
+        We can then finally write the system in \hl{normal form:} $\dot{z} = \dots$.
+        \item \textbf{Choose u to cancel nonlinearities}\\
+        \begin{equation}
+            u=\frac{1}{L_{g} L_{f}^{\rho-1} h}\left(-L_{f}^{\rho} h+v\right) \quad \implies \quad \psi_{\rho} = v
+        \end{equation}
+        \item \textbf{Analyze the zero-dynamics}\\
+        \item \textbf{Choose $v$ to solve the control problem}\\
+        This is a special case of the system $\dot{\varphi}=f_{0}(\varphi, \psi), \quad \dot{\psi}=A \psi+B v$.
+        \begin{lemma}
+            If the system is minimum phase and $v=-K\psi$ is chosen s.t. $(A-BK)$ is Hurwitz, then the origin of the system is asymptotically stable.
+        \end{lemma}
+        \begin{lemma}
+            If $\dot{\phi} = f_0(\phi, \psi)$ is ISS, then the system is GAS.
+        \end{lemma}
+        For tracking we have $v=-K e+y_{d}^{(\rho)}$, but the same results apply, expect $\phi$ is now only bounded.
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsection{Adaptive control}
 
