@@ -607,7 +607,51 @@ We now consider the system $\begin{array}{l}{\dot{x}=f(x)+g(x) u} \\ {y=h(x)}\en
 \end{tcolorbox}
 
 \subsection{Adaptive control}
+\subsubsection{MRAC for SISO systems}
+Consider the SISO system $\dot{x} = a_p x + c_p f(x) + b_p u$.
+\begin{tcolorbox}[colback=white, colframe=teal]
+    \textbf{SISO MRAC:}
+\begin{enumerate}
+    \item \textbf{Specify desired closed-loop behaviour} by reference model:
+        $\dot{x}_m = a_m x_m + b_m r(t)$
+    \item \textbf{Choose control law} s.t. plant output tracks reference model output when parameters are exactly known, by deriving error dynamics. Then replace parameters by estimates. 
+    \item \textbf{Choose adaptation law} ($\dot{\hat{a}}_x, \dot{\hat{a}}_f, \dot{\hat{a}}_r$) by first deriving new tracking error dynamics in terms of estimation errors, and then choosing adaptation law from suitable Lyapunov function e.g.
+    \begin{equation}
+        V(e, \tilde{a}) = \frac{1}{2}e^2 + \frac{|b_p|}{2\gamma_x}\tilde{a}_x^2 +\frac{|b_p|}{2\gamma_f}\tilde{a}_f^2 +\frac{|b_p|}{2\gamma_r}\tilde{a}_r^2
+    \end{equation}
+    By letting
+    \begin{equation}
+        \dot{\hat{a}}_x = - \gamma_x \text{sgn}(b_p)ex, \quad \dot{\hat{a}}_f = - \gamma_f \text{sgn}(b_p)ef, \quad \dot{\hat{a}}_r = - \gamma_r \text{sgn}(b_p)er
+    \end{equation}
+    the error will go to zero by Barbalat's lemma.
+\end{enumerate}
+\end{tcolorbox}
 
+\subsubsection{Adaptive tracking control for a class of MIMO systems}
+Consider the system $M(q) \ddot{q}+C(q, \dot{q}) \dot{q}+D(q) \dot{q}+g(q)=u$, with $M>0, \dot{M}-2 C \text { is skew symmetric, } z^{T} D z>0 \quad \forall z \neq 0$.\\
+While the system is nonlinear it is linear in the unknown parameters $a$ by the Regression matrix $Y$:
+\begin{equation}
+    M(q) \ddot{q}+C(q, \dot{q}) \dot{q}+D(q) \dot{q}+g(q)=Y(q, \dot{q}, \ddot{q}) a
+\end{equation} 
+
+\begin{tcolorbox}[colback=white, colframe=teal]
+    \textbf{Adaptive MIMO tracking control:}
+    \begin{enumerate}
+        \item Given the desired trajectory $q_d(t), \dot{q}_d(t), \ddot{q}_d(t)$ bounded.
+        \item \textbf{Choose control law:}\\
+        We introduce the virtual reference velocity $s= \dot{e} + \lambda e = \dot{q} - \dot{q}_r$, where $\dot{q}_{r}=\dot{q}_{d}
+        -\Lambda\left(q-q_{d}\right)$.\\
+        \begin{equation}
+            u=\hat{M}(q) \ddot{q}_{r}+\hat{C}(q, \dot{q}) \dot{q}_{r}+\hat{D}(q) \dot{q}_{r}+\hat{g}(q)-K_{p}\left(q-q_{d}\right)-K_{d}\left(\dot{q}-\dot{q}_{d}\right) = Y\left(q, \dot{q}, \dot{q}_{r}, \ddot{q}_{r}\right) \hat{a}-K_{p} e-K_{d} \dot{e}
+        \end{equation}
+        From $V(s)= \frac{1}{2} s^{\top}Ms$ and the cascade stability theorem we get GUAS with perfect tracking.
+        \item \textbf{Choose an adaptation law} such that tracking is achieved asymptotically. Again done by deriving error dynamics and analyzing Lyapunov function with Barbalat's lemma:
+        \begin{equation}
+            V(s, \tilde{a}) = \frac{1}{2} s^{\top}Ms + \frac{1}{2} \tilde{a}^{\top}\Gamma^{-1}\tilde{a} \implies \dot{\tilde{a}} = - \Gamma Y^{\top}s
+        \end{equation}
+        
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsection{Backstepping}
 
