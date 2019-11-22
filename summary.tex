@@ -234,6 +234,10 @@ While Lyapunov's indirect method is simple to use, the results are only local an
     Level set: $\Omega_{c}=\left\{x \in \mathbb{R}^{n}: V(x) \leq c\right\}$
 \end{definition}
 
+\begin{remark}
+    For $V(x)$ radially unbounded $\Omega_c$ is an invariant set.
+\end{remark}
+
 \begin{tcolorbox}[colback=white, colframe=teal]
 \begin{theorem}
     La Salle's theorem:\\
@@ -381,7 +385,7 @@ Now we consider the system $\Sigma: \dot{x}=f(t, x, u)$, where we consider $u(t)
     $\exists \alpha_{1}, \alpha_{2} \in \mathscr{K}_{\infty} \text { and } \rho \in \mathscr{K} \text { s.t. }$
     \begin{itemize}[topsep=0pt]
         \item $\alpha_{1}(\|x\|) \leq V(t, x) \leq \alpha_{2}(\|x\|)$
-        \item $\dot{V}(t, x)=\frac{\partial V}{\partial x} f+\frac{\partial V}{\partial t} \leq-W_{3}(x) \quad\|x\| \geq \rho(\|u\|)>0$
+        \item $\dot{V}(t, x)=\frac{\partial V}{\partial x} f+\frac{\partial V}{\partial t} \leq-W_{3}(x) \quad\ \forall \|x\| \geq \rho(\|u\|)>0$
     \end{itemize}
     where $W_3 > 0$.\\
     It can be shown that $\gamma=\alpha_{1}^{-1} \circ \alpha_{2} \circ \rho$.\\
